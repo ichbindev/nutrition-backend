@@ -1,9 +1,10 @@
 var express = require("express");
+var seed = require("./javascripts/seed.js");
 var router = express.Router();
 
 /* GET a specific food. */
 router.get("/:food", function (req, res, next) {
-  res.send("GET a food " + req.params.food);
+  res.send(seed);
 });
 
 router.get("/search/:queries", function (req, res, next) {
