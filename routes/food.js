@@ -1,5 +1,5 @@
 var express = require("express");
-var seed = require("./javascripts/seed.js");
+var seed = require("../views/data/seed.js");
 var router = express.Router();
 
 /* GET a specific food. */
