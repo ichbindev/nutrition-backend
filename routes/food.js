@@ -1,14 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
-var seed = require("../views/data/seed.js");
+var seedData = require("../views/data/seed.js");
 var router = express.Router();
-
 /* GET a specific food. */
 router.get("/:food", function (req, res, next) {
-  res.send(seed);
+    res.send(seedData);
 });
-
 router.get("/search/:queries", function (req, res, next) {
-  res.send("search a food " + req.params / queries);
+    res.send("search a food " + req.params);
 });
-
 module.exports = router;
