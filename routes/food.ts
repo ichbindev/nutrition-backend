@@ -1,5 +1,6 @@
 import express = require("express");
 import * as dotenv from "dotenv";
+import axios from 'axios';
 
 var seedData = require("../views/data/seed.js");
 var router = express.Router();
@@ -14,7 +15,8 @@ router.get("/:food", function (
   res: express.Response,
   next: express.NextFunction
 ) {
-  res.send(seedData);
+  axios.get("https://api.spoonacular.com/recipes/complexSearch?query=cheese&apiKey=" + nutrition_api_key).then(result => res.send(result), error => res.send(error)).catch(error => res.send(error));
+  // res.send(seedData);
 });
 
 router.get("/search/:queries", function (
